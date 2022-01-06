@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LastPage</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="navigation_inventory">Inventory</string>
+    <string name="navigation_history">History</string>
+    <string name="navigation_profile">Profile</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
