@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.lastpage.R
 import com.example.lastpage.databinding.FragmentHomeBinding
-import com.example.lastpage.entity.Order
+import com.example.lastpage.database.Order
 
 class HomeFragment : Fragment() {
 

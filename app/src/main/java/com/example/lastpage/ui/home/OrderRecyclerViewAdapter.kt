@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lastpage.databinding.ItemLayoutOrderBinding
-import com.example.lastpage.entity.Order
+import com.example.lastpage.database.Order
 
 class OrderRecyclerViewAdapter(
 private val orders: List<Order>)
