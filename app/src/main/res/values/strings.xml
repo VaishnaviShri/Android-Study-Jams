@@ -8,4 +8,9 @@
     <string name="navigation_profile">Profile</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">Add product</string>
+    <string name="add2">add order</string>
+    <string name="address">Address</string>
+    <string name="name">Name</string>
+    <string name="order_id">Order ID</string>
 </resources>
