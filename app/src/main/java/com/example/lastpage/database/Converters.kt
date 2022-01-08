@@ -10,8 +10,8 @@ class Converters {
 
     private val moshi = Moshi.Builder().build()
 
-    private val listString : ParameterizedType = newParameterizedType(MutableList::class.java, String::class.java)
-    private val listStringJsonAdapter: JsonAdapter<List<Product>> = moshi.adapter(listString)
+    private val list : ParameterizedType = newParameterizedType(MutableList::class.java, Product::class.java)
+    private val listStringJsonAdapter: JsonAdapter<List<Product>> = moshi.adapter(list)
 
     @TypeConverter
     fun listStringToJsonStr(listMyModel: List<Product>?): String? {

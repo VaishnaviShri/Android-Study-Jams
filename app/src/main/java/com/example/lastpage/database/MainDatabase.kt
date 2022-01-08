@@ -3,7 +3,7 @@ package com.example.lastpage.database
 import android.content.Context
 import androidx.room.*
 
-@Database(entities = [Order::class, Product::class], version = 1, exportSchema = false)
+@Database(entities = [Order::class, Product::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class MainDatabase : RoomDatabase(){
     abstract val mainDao: MainDao

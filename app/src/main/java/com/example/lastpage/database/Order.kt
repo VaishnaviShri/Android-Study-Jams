@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "orders")
 data class Order(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val orderId: String,
+    val orderId: Int = 0,
 
     @ColumnInfo(name = "cust_name")
     var customerName: String = "",
@@ -24,6 +24,6 @@ data class Order(
     var total: Float = 0f,
 
     @ColumnInfo(name = "status")
-    var orderStatus: Int = 1
+    var orderStatus: Int = 0
 )
 
