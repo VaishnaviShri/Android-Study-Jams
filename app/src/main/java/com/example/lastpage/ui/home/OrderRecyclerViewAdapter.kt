@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lastpage.databinding.ItemLayoutOrderBinding
-import com.example.lastpage.entity.Order
+import com.example.lastpage.database.Order
 
 class OrderRecyclerViewAdapter(
 private val orders: List<Order>)
@@ -19,14 +19,15 @@ private val orders: List<Order>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = orders[position]
-        holder.idView.text = item.orderId
+        holder.idView.text = "Order " + item.orderId.toString()
+        holder.price.text = "Price: " + item.total.toString()
     }
 
     override fun getItemCount(): Int = orders.size
 
     inner class ViewHolder(binding: ItemLayoutOrderBinding) : RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.orderId
-
+        val price: TextView = binding.price
     }
 
 
