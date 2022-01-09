@@ -7,12 +7,20 @@
     <action
         android:id="@+id/navigate_to_add_fragment"
         app:destination="@id/add_order_fragment"/>
+    <action
+        android:id="@+id/navigate_to_add_product"
+        app:destination="@id/navigation_add_product"/>
 
     <fragment
         android:id="@+id/navigation_inventory"
         android:label="@string/navigation_inventory"
         android:name="com.example.lastpage.ui.profile.InventoryFragment"
         tools:layout="@layout/fragment_inventory" />
+    <fragment
+        android:id="@+id/navigation_add_product"
+        android:label="Add Product"
+        android:name="com.example.lastpage.ui.inventory.AddProductFragment"
+        tools:layout="@layout/fragment_add_product"/>
 
     <fragment
         android:id="@+id/navigation_home"

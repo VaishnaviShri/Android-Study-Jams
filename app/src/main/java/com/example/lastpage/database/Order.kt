@@ -21,7 +21,7 @@ data class Order(
     var productList: MutableList<Product> = mutableListOf(),
 
     @ColumnInfo(name = "total")
-    var total: Float = 0f,
+    var total: Double = 0.0,
 
     @ColumnInfo(name = "status")
     var orderStatus: Int = 0

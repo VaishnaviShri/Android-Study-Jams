@@ -7,12 +7,15 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "products")
 data class Product(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "productID")
+    val productID: Int,
+
     @ColumnInfo(name = "name")
-    val name: String,
+    val name: String = "",
 
     @ColumnInfo(name = "price")
-    val price: Float
+    val price: Double = 0.0
 
 
 ) {

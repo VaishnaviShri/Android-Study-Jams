@@ -76,7 +76,7 @@ class AddOrderViewModel(private val dataSource: MainDao) : ViewModel() {
     }
 
     fun order() {
-        var total = 0f
+        var total = 0.0
 
         for (i in _selectedList.value!!) {
             total += i.price

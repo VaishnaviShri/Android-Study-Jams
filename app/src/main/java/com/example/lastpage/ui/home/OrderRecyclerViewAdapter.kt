@@ -20,6 +20,8 @@ private val orders: List<Order>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = orders[position]
         holder.idView.text = "Order " + item.orderId.toString()
+        holder.customerName.text = item.customerName
+        holder.orderAddress.text = item.address
         holder.price.text = "Price: " + item.total.toString()
     }
 
@@ -28,6 +30,8 @@ private val orders: List<Order>)
     inner class ViewHolder(binding: ItemLayoutOrderBinding) : RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.orderId
         val price: TextView = binding.price
+        val customerName : TextView = binding.customerName
+        val orderAddress : TextView = binding.orderAddress
     }
 
 

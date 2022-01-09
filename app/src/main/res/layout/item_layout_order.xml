@@ -3,35 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="8dp"
+       android:minHeight="48dp"
+       android:layout_margin="8dp"
+       app:cardCornerRadius="5dp">
 
-    </data>
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp">
+           <TextView
+               android:id="@+id/order_id"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="8dp"
+               android:layout_marginTop="8dp"
+               android:textSize="16sp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               tools:text="Order 21" />
+           <TextView
+               android:id="@+id/customer_name"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="18sp"
+               android:text="Customer Name"
+               android:layout_margin="8dp"
+               android:textStyle="bold"
+               app:layout_constraintTop_toBottomOf="@+id/order_id"
+               app:layout_constraintStart_toStartOf="parent"/>
+           <TextView
+               android:id="@+id/order_address"
+               android:layout_width="280dp"
+               android:layout_height="wrap_content"
+               android:textSize="18sp"
+               android:text="Customer Name"
+               android:layout_margin="8dp"
+               android:textStyle="italic"
+               app:layout_constraintTop_toBottomOf="@+id/customer_name"
+               app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/order_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Order 21" />
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/order_id"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Price: 34" />
+           <TextView
+               android:id="@+id/price"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="8dp"
+               android:textSize="18sp"
+               android:textStyle="bold"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               tools:text="Price: 34" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.cardview.widget.CardView>
+
+
 </layout>
