@@ -11,6 +11,9 @@
         android:id="@+id/navigate_to_add_product"
         app:destination="@id/navigation_add_product"/>
 
+    <action
+        android:id="@+id/navigate_to_home"
+        app:destination="@id/navigation_home"/>
     <fragment
         android:id="@+id/navigation_inventory"
         android:label="@string/navigation_inventory"

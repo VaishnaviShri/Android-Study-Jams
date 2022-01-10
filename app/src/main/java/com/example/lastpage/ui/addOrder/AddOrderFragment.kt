@@ -42,7 +42,7 @@ class AddOrderFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.button.setOnClickListener {
-            findNavController().navigate(R.id.add_order_to_home)
+            findNavController().navigate(R.id.navigate_to_home)
             Log.v("button", "clicked")
         }
 
