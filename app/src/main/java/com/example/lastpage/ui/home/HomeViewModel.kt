@@ -27,4 +27,13 @@ class HomeViewModel(private val dataSource: MainDao) : ViewModel() {
             }
         }
     }
+
+    fun completeOrder(order: Order) {
+        uiScope.launch {
+            withContext(Dispatchers.IO) {
+                dataSource.updateOrder(order.copy(orderStatus = 1))
+                _orderList.postValue(dataSource.getAllOrders())
+            }
+        }
+    }
 }

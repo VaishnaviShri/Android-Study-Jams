@@ -4,18 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.lastpage.R
 import com.example.lastpage.database.MainDatabase
 import com.example.lastpage.databinding.FragmentHomeBinding
-import com.example.lastpage.database.Order
-import com.example.lastpage.ui.addOrder.AddOrderViewModel
-import com.example.lastpage.ui.addOrder.AddOrderViewModelFactory
 
 class HomeFragment : Fragment() {
 
@@ -29,7 +23,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val application = requireNotNull(activity).application
         val dataSource = MainDatabase.getInstance(application).mainDao
@@ -39,9 +33,11 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        homeViewModel.orderList.observe(viewLifecycleOwner, Observer {
-            with(_binding!!.ordersRecyclerview){
-                adapter = OrderRecyclerViewAdapter(it)
+        homeViewModel.orderList.observe(viewLifecycleOwner, {
+            with(_binding!!.ordersRecyclerview) {
+                adapter = OrderRecyclerViewAdapter(it) { item ->
+                    homeViewModel.completeOrder(item)
+                }
             }
         })
 

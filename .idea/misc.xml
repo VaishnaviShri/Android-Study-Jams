@@ -3,12 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/CodeStuff/LastPage/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/add_order_fragment.xml" value="0.2296875" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_add_product.xml" value="0.1" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
-        <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_inventory.xml" value="0.2" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_item.xml" value="0.2296875" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_item_list.xml" value="0.215625" />
@@ -18,6 +17,12 @@
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/item_layout_order.xml" value="0.3249001331557923" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/item_layout_product.xml" value="0.264" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Aryan Arora/StudioProjects/Android-Study-Jams/app/src/main/res/drawable-v24/baseline_done_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Aryan Arora/StudioProjects/Android-Study-Jams/app/src/main/res/layout/add_order_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/Aryan Arora/StudioProjects/Android-Study-Jams/app/src/main/res/layout/fragment_add_product.xml" value="0.3625" />
+        <entry key="..\:/Users/Aryan Arora/StudioProjects/Android-Study-Jams/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/Users/Aryan Arora/StudioProjects/Android-Study-Jams/app/src/main/res/layout/item_layout_order.xml" value="0.3625" />
+        <entry key="..\:/Users/Aryan Arora/StudioProjects/Android-Study-Jams/app/src/main/res/layout/item_layout_product.xml" value="0.3625" />
       </map>
     </option>
   </component>

@@ -58,6 +58,16 @@
                app:layout_constraintEnd_toEndOf="parent"
                tools:text="Price: 34" />
 
+           <ImageView
+               android:id="@+id/done_image"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:layout_marginEnd="8dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:srcCompat="@drawable/baseline_done_24" />
+
        </androidx.constraintlayout.widget.ConstraintLayout>
 
    </androidx.cardview.widget.CardView>
