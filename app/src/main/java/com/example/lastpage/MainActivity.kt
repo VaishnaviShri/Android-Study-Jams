@@ -5,7 +5,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.lastpage.databinding.ActivityMainBinding
 
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
        // setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         binding.fab.setOnClickListener {
-            navController.navigate(R.id.navigate_to_add_fragment)
+            navController.navigate(R.id.navigate_to_add_order_fragment)
         }
 
 

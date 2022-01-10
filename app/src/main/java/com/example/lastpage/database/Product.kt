@@ -9,7 +9,7 @@ data class Product(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "productID")
-    val productID: Int,
+    val productID: Int =0,
 
     @ColumnInfo(name = "name")
     val name: String = "",
