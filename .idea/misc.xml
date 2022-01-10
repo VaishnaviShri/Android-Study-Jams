@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CodeStuff/LastPage/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/add_order_fragment.xml" value="0.2296875" />
         <entry key="..\:/CodeStuff/LastPage/app/src/main/res/layout/fragment_add_product.xml" value="0.1" />
