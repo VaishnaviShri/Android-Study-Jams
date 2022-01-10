@@ -1,18 +1,15 @@
 package com.example.lastpage.ui.addProduct
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.lastpage.R
 import com.example.lastpage.database.MainDatabase
 import com.example.lastpage.databinding.FragmentAddProductBinding
-import com.example.lastpage.ui.addOrder.AddOrderViewModel
-import com.example.lastpage.ui.addOrder.AddOrderViewModelFactory
 
 class AddProductFragment : Fragment() {
 
@@ -26,9 +23,25 @@ class AddProductFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_product,container,false)
+    ): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_product, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.addProductButton.setOnClickListener {
+            val name = binding.productNameET.text.toString()
+            val price = binding.productPriceET.text.toString().toDoubleOrNull()
+
+            if (name.isNotEmpty() && price != null) {
+                viewModel.addProduct(name, price)
+            }
+
+            binding.productNameET.setText("")
+            binding.productPriceET.setText("")
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -36,9 +49,7 @@ class AddProductFragment : Fragment() {
         val application = requireNotNull(activity).application
         val dataSource = MainDatabase.getInstance(application).mainDao
 
-        val viewModel: AddOrderViewModel by viewModels { AddProductViewModelFactory(dataSource = dataSource) }
-
-        // TODO: Use the ViewModel
+        val vm: AddProductViewModel by viewModels { AddProductViewModelFactory(dataSource = dataSource) }
+        viewModel = vm
     }
-
 }
