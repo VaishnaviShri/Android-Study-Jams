@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/navigation_add_product"
         android:label="Add Product"
-        android:name="com.example.lastpage.ui.inventory.AddProductFragment"
+        android:name="com.example.lastpage.ui.addProduct.AddProductFragment"
         tools:layout="@layout/fragment_add_product"/>
 
     <fragment

@@ -1,4 +1,4 @@
-package com.example.lastpage.ui.inventory
+package com.example.lastpage.ui.addProduct
 
 import androidx.databinding.InverseBindingMethod
 import androidx.databinding.InverseBindingMethods

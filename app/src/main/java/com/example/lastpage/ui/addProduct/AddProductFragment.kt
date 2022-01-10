@@ -1,4 +1,4 @@
-package com.example.lastpage.ui.inventory
+package com.example.lastpage.ui.addProduct
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import com.example.lastpage.R
-import com.example.lastpage.databinding.AddOrderFragmentBinding
+import com.example.lastpage.database.MainDatabase
 import com.example.lastpage.databinding.FragmentAddProductBinding
+import com.example.lastpage.ui.addOrder.AddOrderViewModel
+import com.example.lastpage.ui.addOrder.AddOrderViewModelFactory
 
 class AddProductFragment : Fragment() {
 
@@ -24,12 +27,16 @@ class AddProductFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_product,container,false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AddProductViewModel::class.java)
+        val application = requireNotNull(activity).application
+        val dataSource = MainDatabase.getInstance(application).mainDao
+
+        val viewModel: AddOrderViewModel by viewModels { AddProductViewModelFactory(dataSource = dataSource) }
 
         // TODO: Use the ViewModel
     }

@@ -5,20 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.lastpage.R
 import com.example.lastpage.database.MainDatabase
 import com.example.lastpage.databinding.FragmentInventoryBinding
+import com.example.lastpage.ui.home.HomeViewModel
+import com.example.lastpage.ui.home.HomeViewModelFactory
 import com.example.lastpage.ui.inventory.InventoryViewModel
+import com.example.lastpage.ui.inventory.InventoryViewModelFactory
 import com.example.lastpage.ui.inventory.ProductRecyclerViewAdapter
 
 class InventoryFragment : Fragment() {
 
     private lateinit var mInventoryFragment : InventoryFragment
     private var _binding : FragmentInventoryBinding? =null
-    private lateinit var mInventoryViewModel: InventoryViewModel
+   // private lateinit var mInventoryViewModel: InventoryViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,15 +33,16 @@ class InventoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mInventoryViewModel = ViewModelProvider(this).get(InventoryViewModel::class.java)
+        val application = requireNotNull(activity).application
+        val dataSource = MainDatabase.getInstance(application).mainDao
+        val inventoryViewModel: InventoryViewModel by viewModels { InventoryViewModelFactory(dataSource = dataSource) }
+
+       // mInventoryViewModel = ViewModelProvider(this).get(InventoryViewModel::class.java)
         _binding = FragmentInventoryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val application = requireNotNull(activity).application
-        val dataSource = MainDatabase.getInstance(application).mainDao
 
-
-        mInventoryViewModel.productList.observe(viewLifecycleOwner, Observer {
+        inventoryViewModel.productList.observe(viewLifecycleOwner, Observer {
             with(_binding!!.productsRecyclerview){
                 adapter = ProductRecyclerViewAdapter(it)
             }
