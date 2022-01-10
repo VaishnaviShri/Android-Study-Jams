@@ -11,7 +11,7 @@ class AddProductViewModel(private val dataSource: MainDao) : ViewModel() {
 
     private val uiScope = CoroutineScope(Dispatchers.Main + Job())
     fun addProduct(name: String, price: Double) {
-        val product = Product(0, name, price)
+        val product = Product(name = name, price = price)
         uiScope.launch {
             withContext(Dispatchers.IO) {
                 dataSource.insertProduct(product)

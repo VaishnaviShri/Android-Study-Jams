@@ -23,6 +23,7 @@ class ProductRecyclerViewAdapter(
         val item = products[position]
         holder.productName.text = item.name
         holder.price.text = item.price.toString()
+
     }
 
     override fun getItemCount(): Int = products.size
